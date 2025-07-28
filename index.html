@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Instagram Photo Feed</title>
+</head>
+  <body>
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
+      <div class="container-fluid">      
+        <a class="navbar-brand" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <div class="d-flex">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Create a new post</button>
+        
+          <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Caption:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                    </form>
+                    <div class="mb-3">
+                        <i class="fa-solid fa-camera ms-1"></i>
+                        <i class="fa-solid fa-location-dot ms-2"></i>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+          <!-- Collapse -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <!-- Desplegable -->
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-secondary dropdown-toggle me-2 ms-2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-gear"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-white">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                  <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                  <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+         </div>
+      </div>
+    </nav>
+
+     <!-- Botones de vista -->
+      <div class="mb-4 d-flex gap-3 d-flex justify-content-center align-items-center">
+        <a href="#" class="btn btn-outline-secondary" onclick="showView('single')">
+          <i class="fa-solid fa-image"></i>
+        </a>
+        <a href="#" class="btn btn-outline-secondary" onclick="showView('gallery')">
+          <i class="fa-solid fa-table-cells"></i>
+        </a>
+      </div>
+
+      <!-- Single -->
+      <div id="view-single" class="d-none container py-4 justify-content-center align-items-center">
+        <div class="row text-center">
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/10/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/11/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/12/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/13/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/14/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/15/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/16/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/17/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+          <div class="col-12 mb-4"><img src="https://picsum.photos/id/18/350/350" class="img-fluid rounded w-50" alt="Imagen grande"></div>
+        </div>    
+      </div>
+
+    <!-- Gallery -->
+    <div id="view-gallery" class="d-none container py-4 d-flex justify-content-center align-items-center">
+      <div class="row g-3">
+        <!-- Fila 1 -->
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/10/350/350" alt="img1" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/11/350/350" alt="img2" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/12/350/350" alt="img3" class="grid-img">
+        </div>
+        <!-- Fila 2 -->
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/13/350/350" alt="img4" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/14/350/350" alt="img5" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/15/350/350" alt="img6" class="grid-img">
+        </div>
+        <!-- Fila 3 -->
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/16/350/350" alt="img7" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/17/350/350" alt="img8" class="grid-img">
+        </div>
+        <div class="col-md-4">
+          <img src="https://picsum.photos/id/18/350/350" alt="img9" class="grid-img">
+        </div>
+      </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+  <script src="app.js"></script> 
+  </body>
+</html>
